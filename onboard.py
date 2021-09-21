@@ -144,10 +144,14 @@ if __name__ == "__main__":
     resources.append(r)
 
   print("Checking resources exist")
-  applied_statuses = map(does_resource_exist, resources)
+  applied_statuses = list(map(does_resource_exist, resources))
 
   if not all(applied_statuses):
     print("Warning: Helm deployment contains resources not already applied")
+    print("Do you want to continue? [y/N]")
+    should_continue = input()
+    if should_continue != "y":
+      sys.exit(1)
   
 
   print("Checking if release already exists")  
