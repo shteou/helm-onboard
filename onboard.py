@@ -100,8 +100,6 @@ def patch_resource(resource, release_name, namespace):
 
 
 def patch_resources(resources, release_name, namespace):
-  print("Patching resources")
-  print(resources)
   for r in resources:
     print("Patching a resource")
     res = patch_resource(r, release_name, namespace)
