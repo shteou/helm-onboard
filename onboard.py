@@ -172,4 +172,7 @@ if __name__ == "__main__":
   if success:
     print("Successfully patched all resources")
   
-  upgrade_helm(release_name, chart_name)
+  if upgrade_helm(release_name, chart_name):
+    print(f"Successfully onboarded the helm chart {chart_name}")
+  else:
+    print(f"Failed to upgrade the helm release with the helm chart {chart_name}")
