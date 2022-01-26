@@ -7,6 +7,8 @@ an alternate tool like Kustomize.
 
 ## Usage
 
+First run `pip install -r requirements.txt` (and any virtual env you require).
+
 Let's assume you have a chart, `my-chart`, which has been installed with
 `helm template importme my-chart | kubectl apply -f -` into the `default`
 namespace.
